@@ -10,7 +10,7 @@ on:
         default: true
       option:
         description: Ignore 'use workflow from', run from tag that generated the docker image
-        type: option
+        type: choice
         required: false
         default: true
   
