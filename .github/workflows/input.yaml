@@ -1,0 +1,21 @@
+name: Actions input test
+
+on:
+  workflow_dispatch:
+    inputs:
+      boolean:
+        description: Ignore 'use workflow from', run from tag that generated the docker image
+        type: boolean
+        required: false
+        default: true
+      option:
+        description: Ignore 'use workflow from', run from tag that generated the docker image
+        type: option
+        required: false
+        default: true
+  
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World"
