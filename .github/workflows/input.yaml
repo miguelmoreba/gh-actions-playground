@@ -15,6 +15,9 @@ on:
           - You cannot change this
         required: false
         default: true
+      tag:
+        description: "Tag to deploy for media web. The workflow will run from the git tag that generated this docker image. `use workflow from` option is ignored for this workflow"
+        required: true
   
 jobs:
   hello-world:
