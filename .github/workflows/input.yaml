@@ -23,7 +23,7 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
     permissions:
-      content: write
+      contents: write
     steps:
       - run: echo "Hello World"
       - uses: actions/checkout@v3
