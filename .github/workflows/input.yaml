@@ -33,7 +33,7 @@ jobs:
       #     git config user.name "GitHub Actions"
       #     git config user.email "github@miguel.com"
 
-        shell: bash
+      - shell: bash
         run: git tag -f last-release
 
       - name: Push changes
