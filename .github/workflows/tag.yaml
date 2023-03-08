@@ -33,7 +33,7 @@ jobs:
       - run: echo "Hello World"
       - uses: actions/checkout@v3
         with:
-          ref: ${{ inputs.run-from-git-tag == 'true' && inputs.tag || inputs.repo-ref }}
+          ref: ${{ inputs.run-from-git-tag == true && inputs.tag || inputs.repo-ref }}
           fetch-depth: 0
       - run: git status
           
