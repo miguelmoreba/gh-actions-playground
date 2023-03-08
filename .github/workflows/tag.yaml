@@ -1,0 +1,39 @@
+name: Actions input test
+
+on:
+  workflow_dispatch:
+    inputs:
+      run-from-git-tag:
+        description: Ignore 'use workflow from', run from tag that generated the docker image
+        type: boolean
+        required: false
+        default: true
+    #   option:
+    #     description: Ignore 'use workflow from', run from tag that generated the docker image
+    #     type: choice
+    #     options:
+    #       - You cannot change this
+    #     required: false
+    #     default: true
+      tag:
+        description: "Tag to deploy for media web. The workflow will run from the git tag that generated this docker image. \n \n `use workflow from` option is ignored for this workflow"
+        required: true
+        type: string
+      repo-ref:
+        required: true
+        type: string
+
+  
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - run: echo "Hello World"
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.run-from-git-tag == 'true' && inputs.tag || 'inputs.repo-ref' }}
+      - run: git status
+          
+
