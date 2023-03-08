@@ -1,4 +1,4 @@
-name: Actions input test
+name: Run from tag test
 
 on:
   workflow_dispatch:
